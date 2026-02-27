@@ -26,6 +26,10 @@ import {
   FileText,
   ShieldAlert,
   Box,
+  Activity,
+  ScrollText,
+  MessageSquare,
+  Gamepad2,
 } from 'lucide-react';
 
 const themes = {
@@ -580,8 +584,8 @@ const BatteriesIncluded = ({ themeDef }) => {
       icon: (
         <TestTube className="text-slate-800 dark:text-white mb-4" size={28} strokeWidth={1.5} />
       ),
-      title: 'TDD & 360+ Pre-written Tests',
-      desc: 'Ships with massive test coverage. When you use the CLI to scaffold a feature, integration and unit test placeholders are generated automatically.',
+      title: 'TDD & 390+ Pre-written Tests',
+      desc: 'Ships with massive test coverage across CLI (235), Admin (83), and API (50+). Scaffold a feature and integration tests are generated automatically.',
     },
     {
       icon: <Cloud className="text-slate-800 dark:text-white mb-4" size={28} strokeWidth={1.5} />,
@@ -609,15 +613,15 @@ const BatteriesIncluded = ({ themeDef }) => {
     },
     {
       icon: <Box className="text-slate-800 dark:text-white mb-4" size={28} strokeWidth={1.5} />,
-      title: 'Multi-Env Docker',
-      desc: 'A complete Docker lifecycle. Hot-reloading dev environments, E2E test environments, and Alpine production builds are generated for every workspace.',
+      title: 'Docker Multi-Env',
+      desc: 'Three Docker environments out of the box: ./start-dev.sh (hot-reload), ./start-test.sh (CI-ready), and ./start-prod.sh (Alpine production builds).',
     },
     {
       icon: (
         <Terminal className="text-slate-800 dark:text-white mb-4" size={28} strokeWidth={1.5} />
       ),
       title: 'One Command, Full Stack',
-      desc: 'Scaffold an API, Admin UI, and Storefront with one command (tstack create workspace). Three connected projects, completely pre-wired.',
+      desc: 'Scaffold an API, Admin UI, Storefront, and Status Page with one command (tstack create workspace). Four connected services, completely pre-wired.',
     },
     {
       icon: (
@@ -648,7 +652,28 @@ const BatteriesIncluded = ({ themeDef }) => {
     {
       icon: <Cloud className="text-slate-800 dark:text-white mb-4" size={28} strokeWidth={1.5} />,
       title: 'Zero-Config Deployment',
-      desc: 'A single tstack infra command provides a production Kamal deployment setup for shipping to a single low-cost VPS instance.',
+      desc: 'A single tstack infra command provisions a production Kamal deployment with Traefik, auto-SSL, and zero-downtime deploys to a low-cost VPS.',
+    },
+    {
+      icon: (
+        <Activity className="text-slate-800 dark:text-white mb-4" size={28} strokeWidth={1.5} />
+      ),
+      title: 'Built-in Status Page',
+      desc: 'A dedicated status-starter package monitors health endpoints across all your services with a clean, real-time dashboard and light/dark theme.',
+    },
+    {
+      icon: (
+        <ScrollText className="text-slate-800 dark:text-white mb-4" size={28} strokeWidth={1.5} />
+      ),
+      title: 'Dozzle Log Viewer',
+      desc: 'Real-time Docker container logs in your browser at localhost:9999. No more ssh-ing into servers to tail logs — it is pre-wired into every workspace.',
+    },
+    {
+      icon: (
+        <Layers className="text-slate-800 dark:text-white mb-4" size={28} strokeWidth={1.5} />
+      ),
+      title: 'Netdata Metrics',
+      desc: 'Production monitoring with Netdata for CPU, memory, disk, and network metrics. Pre-configured in the deployment guide with Kamal Accessories.',
     },
   ];
 
@@ -704,7 +729,7 @@ const AboutCreator = ({ themeDef }) => (
             <img
               src="https://github.com/desingh-rajan.png"
               alt="Desingh Rajan"
-              className="w-full aspect-square object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500"
+              className="w-full aspect-square object-cover rounded-xl transition-all duration-500"
             />
           </div>
 
@@ -912,10 +937,15 @@ const Pricing = ({ themeDef }) => (
 
           <ul className="space-y-4 mb-8 flex-grow">
             {[
-              'Deno runtime built-in tools',
-              'Hono API routing',
-              'Fresh (Preact) frontend',
-              'Drizzle ORM + Postgres config',
+              'Full CLI: create, scaffold, destroy, infra',
+              'Hono API + Fresh (Preact) frontends',
+              'Drizzle ORM + PostgreSQL + Zod validation',
+              '390+ tests (CLI, Admin, API)',
+              'JWT + OAuth (Google, Facebook)',
+              'Docker multi-env (dev / test / prod)',
+              'Kamal deployment + Status page',
+              'E-commerce: cart, orders, payments',
+              'Security hardened (9-block audit)',
               'Community support via GitHub',
             ].map((item, i) => (
               <li
@@ -959,7 +989,7 @@ const Pricing = ({ themeDef }) => (
                 className={`text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${themeDef.gradient}`}
               >
                 {' '}
-                $149{' '}
+                $119{' '}
               </span>
               <span className="text-lg text-slate-400 dark:text-zinc-500 line-through mb-1">
                 {' '}
@@ -968,7 +998,7 @@ const Pricing = ({ themeDef }) => (
             </div>
             <p className="text-xs text-slate-500 dark:text-zinc-500 font-bold uppercase tracking-wider">
               {' '}
-              No subscriptions.One - time purchase.
+              Early bird pricing until June 19. One - time purchase.
             </p>
           </div>
 
@@ -979,9 +1009,9 @@ const Pricing = ({ themeDef }) => (
             </li>
             {[
               'Private repository access on release',
+              'Flutter mobile UI kit (upcoming)',
               'Priority email support',
               'Advanced SaaS templates & layouts',
-              'Production deployment scripts for standard VPS',
               'Vote on upcoming feature roadmaps',
             ].map((item, i) => (
               <li
@@ -992,6 +1022,18 @@ const Pricing = ({ themeDef }) => (
                 <span>{item} </span>
               </li>
             ))}
+            <li className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm pt-2 border-t border-slate-200 dark:border-zinc-800">
+              <MessageSquare size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
+              <span>Private Discord community (20+ lead architects & principals) </span>
+            </li>
+            <li className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm">
+              <BrainCircuit size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
+              <span>On-demand architecture guidance via Discord chat </span>
+            </li>
+            <li className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm">
+              <Gamepad2 size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
+              <span>Game nights — AOE2 DE & DOTA with the community </span>
+            </li>
           </ul>
 
           <div className="p-4 bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-md mb-6">
@@ -1116,7 +1158,7 @@ const Footer = () => (
       Speed by default. Sleek by design. Simple by nature.
     </p>
     <div className="mt-6 text-slate-400 dark:text-zinc-600 text-xs">
-      & copy; {new Date().getFullYear()} tstack ecosystem.All rights reserved.
+      © {new Date().getFullYear()} tstack ecosystem. All rights reserved.
     </div>
   </footer>
 );
