@@ -1,16 +1,21 @@
-# React + Vite
+# TStack Kit — Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Official marketing website for [TStack Kit](https://github.com/desingh-rajan/tstack-kit) — the production-ready full-stack scaffold powered by Deno + Fresh + Drizzle.
 
-Currently, two official plugins are available:
+🌐 **Live:** [tstack.desinghrajan.in](https://tstack.desinghrajan.in)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## What This Site Covers
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Feature showcase** — CLI scaffolding, 6 packages (API, Admin, Store, Status, CLI, Shared), 390+ tests, Docker multi-env, Kamal deployment, monitoring
+- **Early Adopter Bundle** — $149 lifetime access to the upcoming premium ecosystem (nstack, rstack, pstack)
+- **FAQ & documentation links** — Architecture deep-dive, comparison with alternatives
 
-## Expanding the ESLint configuration
+## Related
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **[tstack-kit](https://github.com/desingh-rajan/tstack-kit)** — The open-source CLI & scaffold
+
+## License
+
+Private — © TStack / Desingh Rajan
