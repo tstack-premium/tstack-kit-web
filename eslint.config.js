@@ -23,7 +23,11 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // varsIgnorePattern covers PascalCase components AND lowercase JSX namespace objects (e.g. motion.div)
+      'no-unused-vars': [
+        'error',
+        { varsIgnorePattern: '^[A-Z_]|^motion$', argsIgnorePattern: '^_' },
+      ],
     },
   },
 ]);

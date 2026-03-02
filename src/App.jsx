@@ -669,9 +669,7 @@ const BatteriesIncluded = ({ themeDef }) => {
       desc: 'Real-time Docker container logs in your browser at localhost:9999. No more ssh-ing into servers to tail logs — it is pre-wired into every workspace.',
     },
     {
-      icon: (
-        <Layers className="text-slate-800 dark:text-white mb-4" size={28} strokeWidth={1.5} />
-      ),
+      icon: <Layers className="text-slate-800 dark:text-white mb-4" size={28} strokeWidth={1.5} />,
       title: 'Netdata Metrics',
       desc: 'Production monitoring with Netdata for CPU, memory, disk, and network metrics. Pre-configured in the deployment guide with Kamal Accessories.',
     },

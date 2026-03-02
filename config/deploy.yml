@@ -1,0 +1,34 @@
+# Kamal Configuration for tstack-kit-web (Production)
+service: tstack-kit-web
+image: desinghrajan/tstack-kit-web
+
+servers:
+  web:
+    hosts:
+      - 13.126.26.123
+
+registry:
+  username: desinghrajan
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+env:
+  clear:
+    NODE_ENV: production
+
+ssh:
+  user: ubuntu
+
+proxy:
+  host: tstack.desinghrajan.in
+  ssl: true
+  app_port: 8000
+  healthcheck:
+    path: /health
+    interval: 10
+    timeout: 60
+
+builder:
+  arch: amd64
+
+retain_containers: 2

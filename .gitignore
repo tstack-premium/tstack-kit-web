@@ -25,3 +25,7 @@ dist-ssr
 
 # Launch prep (private)
 .prep/
+
+# Kamal secrets (never commit)
+.kamal/secrets
+.kamal/secrets.*
