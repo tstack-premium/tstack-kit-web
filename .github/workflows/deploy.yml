@@ -39,12 +39,5 @@ jobs:
           printf "%s\n" "${{ secrets.KAMAL_SECRETS }}" > .kamal/secrets
           chmod 600 .kamal/secrets
 
-      - name: Debug secrets file
-        run: |
-          echo "File exists: $(test -f .kamal/secrets && echo yes || echo no)"
-          echo "File size: $(wc -c < .kamal/secrets) bytes"
-          echo "Line count: $(wc -l < .kamal/secrets) lines"
-          echo "Contains KAMAL_REGISTRY_PASSWORD: $(grep -c KAMAL_REGISTRY_PASSWORD .kamal/secrets || echo 0)"
-
       - name: Deploy production
         run: kamal deploy -c config/deploy.yml
