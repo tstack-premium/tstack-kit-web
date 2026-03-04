@@ -1,36 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
-import {
-  Github,
-  ArrowRight,
-  Database,
-  CreditCard,
-  Cloud,
-  ShieldCheck,
-  Layers,
-  Zap,
-  Check,
-  ChevronDown,
-  ChevronUp,
-  Sun,
-  Moon,
-  Boxes,
-  Code2,
-  Wind,
-  Terminal,
-  Bot,
-  BrainCircuit,
-  Coins,
-  TestTube,
-  Key,
-  FileText,
-  ShieldAlert,
-  Box,
-  Activity,
-  ScrollText,
-  MessageSquare,
-  Gamepad2,
-} from 'lucide-react';
+import Github from 'lucide-react/dist/esm/icons/github';
+import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
+import Database from 'lucide-react/dist/esm/icons/database';
+import CreditCard from 'lucide-react/dist/esm/icons/credit-card';
+import Cloud from 'lucide-react/dist/esm/icons/cloud';
+import ShieldCheck from 'lucide-react/dist/esm/icons/shield-check';
+import Layers from 'lucide-react/dist/esm/icons/layers';
+import Zap from 'lucide-react/dist/esm/icons/zap';
+import Check from 'lucide-react/dist/esm/icons/check';
+import ChevronDown from 'lucide-react/dist/esm/icons/chevron-down';
+import ChevronUp from 'lucide-react/dist/esm/icons/chevron-up';
+import Sun from 'lucide-react/dist/esm/icons/sun';
+import Moon from 'lucide-react/dist/esm/icons/moon';
+import Boxes from 'lucide-react/dist/esm/icons/boxes';
+import Code2 from 'lucide-react/dist/esm/icons/code-2';
+import Wind from 'lucide-react/dist/esm/icons/wind';
+import Terminal from 'lucide-react/dist/esm/icons/terminal';
+import Bot from 'lucide-react/dist/esm/icons/bot';
+import BrainCircuit from 'lucide-react/dist/esm/icons/brain-circuit';
+import Coins from 'lucide-react/dist/esm/icons/coins';
+import TestTube from 'lucide-react/dist/esm/icons/test-tube';
+import Key from 'lucide-react/dist/esm/icons/key';
+import FileText from 'lucide-react/dist/esm/icons/file-text';
+import ShieldAlert from 'lucide-react/dist/esm/icons/shield-alert';
+import Box from 'lucide-react/dist/esm/icons/box';
+import Activity from 'lucide-react/dist/esm/icons/activity';
+import ScrollText from 'lucide-react/dist/esm/icons/scroll-text';
+import MessageSquare from 'lucide-react/dist/esm/icons/message-square';
+import Gamepad2 from 'lucide-react/dist/esm/icons/gamepad-2';
 
 const themes = {
   biolum: {
