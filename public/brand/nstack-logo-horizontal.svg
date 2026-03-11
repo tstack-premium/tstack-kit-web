@@ -3,7 +3,7 @@
     <path d="M110 310V86" stroke="#0F172A" stroke-width="46" stroke-linecap="round"/>
     <path d="M110 86L310 310" stroke="#0F172A" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M310 310V86" stroke="#0F172A" stroke-width="46" stroke-linecap="round"/>
-    <path d="M298 61C266 61 242 82 242 108C242 136 267 151 293 159C318 167 338 180 338 205C338 232 314 250 277 250" stroke="#0EA5E9" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M336 102C314 102 298 118 298 140C298 162 316 174 336 182C356 190 372 202 372 224C372 250 352 266 320 266" stroke="#5FA04E" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
   <g fill="#0F172A">
     <path d="M470 345V125H525L630 251V125H685V345H630L525 219V345H470Z"/>

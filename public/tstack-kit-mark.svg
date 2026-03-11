@@ -2,5 +2,5 @@
   <rect x="6" y="6" width="52" height="52" rx="16" fill="#0F172A"/>
   <path d="M20 21H44" stroke="#F8FAFC" stroke-width="5" stroke-linecap="round"/>
   <path d="M32 21V45" stroke="#F8FAFC" stroke-width="5" stroke-linecap="round"/>
-  <path d="M43 18C39.5 18 37 20.2 37 23C37 26 39.7 27.6 42.7 28.5C45.4 29.3 47 30.6 47 33.2C47 36.1 44.4 38 40.4 38" stroke="#D946EF" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M45.6 17.6C43.2 17.6 41.6 19.2 41.6 21.6C41.6 24 43.6 25.2 45.8 26C48 26.8 49.8 28.2 49.8 30.6C49.8 33.4 47.6 35.2 44.2 35.2" stroke="#D946EF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

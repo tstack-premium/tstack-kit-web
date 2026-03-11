@@ -1,5 +1,5 @@
 <svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M320 736V288" stroke="#0F172A" stroke-width="92" stroke-linecap="round"/>
   <path d="M320 288H536C628 288 696 356 696 438C696 520 628 588 536 588H320" stroke="#0F172A" stroke-width="92" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M688 270C624 270 576 312 576 365C576 421 626 451 678 468C728 484 768 509 768 559C768 614 720 650 646 650" stroke="#10B981" stroke-width="76" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M724 324C692 324 668 346 668 378C668 410 696 428 726 438C756 448 780 466 780 500C780 538 750 562 706 562" stroke="#6E4A7E" stroke-width="60" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -2,7 +2,7 @@
   <g transform="translate(40 34)">
     <path d="M98 86H322" stroke="#0F172A" stroke-width="46" stroke-linecap="round"/>
     <path d="M210 86V310" stroke="#0F172A" stroke-width="46" stroke-linecap="round"/>
-    <path d="M298 61C266 61 242 82 242 108C242 136 267 151 293 159C318 167 338 180 338 205C338 232 314 250 277 250" stroke="#D946EF" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M328 84C304 84 288 100 288 124C288 148 308 160 330 168C352 176 370 190 370 214C370 242 348 258 314 258" stroke="#D946EF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
   <g fill="#0F172A">
     <path d="M470 125H694V176H610V345H553V176H470V125Z"/>

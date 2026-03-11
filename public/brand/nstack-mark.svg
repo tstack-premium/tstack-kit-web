@@ -2,5 +2,5 @@
   <path d="M312 736V288" stroke="#0F172A" stroke-width="92" stroke-linecap="round"/>
   <path d="M312 288L712 736" stroke="#0F172A" stroke-width="92" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M712 736V288" stroke="#0F172A" stroke-width="92" stroke-linecap="round"/>
-  <path d="M688 270C624 270 576 312 576 365C576 421 626 451 678 468C728 484 768 509 768 559C768 614 720 650 646 650" stroke="#0EA5E9" stroke-width="76" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M734 324C700 324 676 346 676 378C676 410 704 428 734 438C764 448 788 466 788 498C788 536 758 560 714 560" stroke="#5FA04E" stroke-width="60" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

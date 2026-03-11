@@ -202,110 +202,121 @@ const ThemeSwitcher = ({ currentTheme, setTheme }) => (
   </div>
 );
 
-const StackMark = ({ kind = 't', className = '', accentClass = 'stroke-fuchsia-500 dark:stroke-fuchsia-400' }) => (
-  <svg
-    viewBox="0 0 32 32"
-    aria-hidden="true"
-    className={className}
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect
-      x="4"
-      y="4"
-      width="24"
-      height="24"
-      rx="7"
-      className="fill-slate-900/8 dark:fill-white/8 transition-all duration-300 group-hover:fill-slate-900/12 dark:group-hover:fill-white/12"
-    />
-    {kind === 't' && (
-      <>
-        <path
-          d="M9 10H23"
-          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
-          strokeWidth="2.8"
-          strokeLinecap="round"
-        />
-        <path
-          d="M16 10V24"
-          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
-          strokeWidth="2.8"
-          strokeLinecap="round"
-        />
-      </>
-    )}
-    {kind === 'n' && (
-      <>
-        <path
-          d="M10 23V10"
-          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
-          strokeWidth="2.8"
-          strokeLinecap="round"
-        />
-        <path
-          d="M10 10L22 23"
-          className="stroke-slate-900 dark:stroke-white"
-          strokeWidth="2.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M22 23V10"
-          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
-          strokeWidth="2.8"
-          strokeLinecap="round"
-        />
-      </>
-    )}
-    {kind === 'r' && (
-      <>
-        <path
-          d="M10 24V10"
-          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
-          strokeWidth="2.8"
-          strokeLinecap="round"
-        />
-        <path
-          d="M10 10H16.5C19.5 10 21.8 12.2 21.8 15C21.8 17.8 19.5 20 16.5 20H10"
-          className="stroke-slate-900 dark:stroke-white"
-          strokeWidth="2.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M16 19.5L22 24"
-          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
-          strokeWidth="2.8"
-          strokeLinecap="round"
-        />
-      </>
-    )}
-    {kind === 'p' && (
-      <>
-        <path
-          d="M10 24V10"
-          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
-          strokeWidth="2.8"
-          strokeLinecap="round"
-        />
-        <path
-          d="M10 10H17C20 10 22 12.2 22 15C22 17.8 20 20 17 20H10"
-          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
-          strokeWidth="2.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </>
-    )}
-    <path
-      d="M21.5 8.5C19.5 8.5 18 9.8 18 11.4C18 13.1 19.5 14 21.2 14.5C22.8 15 24 15.7 24 17.2C24 18.9 22.5 20 20.2 20"
-      className={`${accentClass} transition-all duration-300 group-hover:translate-x-[0.5px]`}
-      strokeWidth="2.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+const StackMark = ({ kind = 't', className = '', accentClass = 'stroke-fuchsia-500 dark:stroke-fuchsia-400' }) => {
+  const accentPath =
+    kind === 't'
+      ? 'M22.8 8.8C21.6 8.8 20.8 9.6 20.8 10.8C20.8 12 21.8 12.6 22.9 13C24 13.4 24.9 14.1 24.9 15.3C24.9 16.7 23.8 17.6 22.1 17.6'
+      : kind === 'n'
+        ? 'M22.8 10.1C21.6 10.1 20.8 10.9 20.8 12C20.8 13.2 21.8 13.8 22.9 14.2C24 14.6 24.9 15.2 24.9 16.4C24.9 17.8 23.8 18.7 22.1 18.7'
+        : kind === 'r'
+          ? 'M22.4 10.2C21.2 10.2 20.4 11 20.4 12.1C20.4 13.3 21.4 13.9 22.5 14.3C23.7 14.7 24.6 15.3 24.6 16.5C24.6 17.9 23.5 18.9 21.8 18.9'
+          : 'M22.5 10.1C21.3 10.1 20.5 10.9 20.5 12C20.5 13.2 21.5 13.8 22.6 14.2C23.8 14.6 24.7 15.2 24.7 16.5C24.7 17.9 23.6 18.8 21.9 18.8';
+
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="4"
+        y="4"
+        width="24"
+        height="24"
+        rx="7"
+        className="fill-slate-900/8 dark:fill-white/8 transition-all duration-300 group-hover:fill-slate-900/12 dark:group-hover:fill-white/12"
+      />
+      {kind === 't' && (
+        <>
+          <path
+            d="M9 10H23"
+            className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+          />
+          <path
+            d="M16 10V24"
+            className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+          />
+        </>
+      )}
+      {kind === 'n' && (
+        <>
+          <path
+            d="M10 23V10"
+            className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+          />
+          <path
+            d="M10 10L21 23"
+            className="stroke-slate-900 dark:stroke-white"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M21 23V10"
+            className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+          />
+        </>
+      )}
+      {kind === 'r' && (
+        <>
+          <path
+            d="M10 24V10"
+            className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+          />
+          <path
+            d="M10 10H16.5C19.5 10 21.8 12.2 21.8 15C21.8 17.8 19.5 20 16.5 20H10"
+            className="stroke-slate-900 dark:stroke-white"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M16 19.5L22 24"
+            className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+          />
+        </>
+      )}
+      {kind === 'p' && (
+        <>
+          <path
+            d="M10 24V10"
+            className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+          />
+          <path
+            d="M10 10H17C20 10 22 12.2 22 15C22 17.8 20 20 17 20H10"
+            className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </>
+      )}
+      <path
+        d={accentPath}
+        className={`${accentClass} transition-all duration-300 group-hover:translate-x-[0.5px]`}
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
 
 const BrandMark = ({ className = '' }) => <StackMark kind="t" className={className} />;
 
@@ -1109,7 +1120,7 @@ const Ecosystem = ({ themeDef }) => (
             <StackMark
               kind="n"
               className="h-12 w-12"
-              accentClass="stroke-sky-500 dark:stroke-sky-400 group-hover:stroke-sky-600 dark:group-hover:stroke-sky-300"
+              accentClass="stroke-[#5FA04E] dark:stroke-[#7CCB5B] group-hover:stroke-[#4D8D40] dark:group-hover:stroke-[#97DB78]"
             />
           </div>
           <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1"> nstack </h3>
@@ -1124,7 +1135,7 @@ const Ecosystem = ({ themeDef }) => (
             <StackMark
               kind="r"
               className="h-12 w-12"
-              accentClass="stroke-rose-500 dark:stroke-rose-400 group-hover:stroke-rose-600 dark:group-hover:stroke-rose-300"
+              accentClass="stroke-[#CC342D] dark:stroke-[#E14B44] group-hover:stroke-[#B62B25] dark:group-hover:stroke-[#F0645D]"
             />
           </div>
           <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1"> rstack </h3>
@@ -1139,7 +1150,7 @@ const Ecosystem = ({ themeDef }) => (
             <StackMark
               kind="p"
               className="h-12 w-12"
-              accentClass="stroke-emerald-500 dark:stroke-emerald-400 group-hover:stroke-emerald-600 dark:group-hover:stroke-emerald-300"
+              accentClass="stroke-[#6E4A7E] dark:stroke-[#8D63A3] group-hover:stroke-[#5E3F6D] dark:group-hover:stroke-[#A67DB8]"
             />
           </div>
           <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1"> pstack </h3>
