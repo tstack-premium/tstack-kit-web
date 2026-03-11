@@ -29,6 +29,7 @@ import Activity from 'lucide-react/dist/esm/icons/activity';
 import ScrollText from 'lucide-react/dist/esm/icons/scroll-text';
 import MessageSquare from 'lucide-react/dist/esm/icons/message-square';
 import Gamepad2 from 'lucide-react/dist/esm/icons/gamepad-2';
+import X from 'lucide-react/dist/esm/icons/x';
 
 const themes = {
   biolum: {
@@ -57,6 +58,109 @@ const themes = {
   },
 };
 
+const RazorpayButton = ({ onClick }) => {
+  const containerRef = React.useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container || container.querySelector('form')) return;
+
+    const form = document.createElement('form');
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
+    script.setAttribute('data-payment_button_id', 'pl_SPl4AFkA7JfMHe');
+    script.async = true;
+    form.appendChild(script);
+    container.appendChild(form);
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      onClick={onClick}
+      className="w-full [&_form]:w-full [&_.razorpay-payment-button]:w-full [&_.razorpay-payment-button]:!cursor-pointer"
+    />
+  );
+};
+
+const PaymentModal = ({ isOpen, onClose, themeDef }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+        className="relative w-full max-w-lg bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-2xl overflow-hidden"
+      >
+        <div className={`h-1 w-full bg-gradient-to-r ${themeDef.gradient}`} />
+
+        <div className="p-6">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Complete your pre-order</h3>
+              <p className="text-sm text-slate-500 dark:text-zinc-400 mt-1">Early Adopter Bundle — ₹10,999</p>
+            </div>
+            <button
+              onClick={onClose}
+              className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
+            >
+              <X size={20} className="text-slate-400 dark:text-zinc-500" />
+            </button>
+          </div>
+
+          <p className="text-xs text-slate-500 dark:text-zinc-500 uppercase tracking-wider font-bold mb-4">Choose payment method</p>
+
+          <div className="space-y-3">
+            <div className="border border-slate-200 dark:border-zinc-800 rounded-xl p-4 bg-slate-50 dark:bg-zinc-950">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center shrink-0">
+                  <CreditCard size={16} className="text-white" />
+                </div>
+                <div>
+                  <p className="font-bold text-sm text-slate-900 dark:text-white">Razorpay</p>
+                  <p className="text-xs text-slate-500 dark:text-zinc-500">UPI · Cards · Net Banking · Wallets</p>
+                </div>
+              </div>
+              <RazorpayButton onClick={onClose} />
+            </div>
+
+            <div className="border border-slate-200 dark:border-zinc-800 rounded-xl p-4 opacity-50 flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-yellow-500 flex items-center justify-center shrink-0">
+                <Coins size={16} className="text-white" />
+              </div>
+              <div className="flex-1">
+                <p className="font-bold text-sm text-slate-900 dark:text-white">LemonSqueezy</p>
+                <p className="text-xs text-slate-500 dark:text-zinc-500">International cards · PayPal</p>
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-zinc-600 bg-slate-100 dark:bg-zinc-800 px-2 py-1 rounded-full">Soon</span>
+            </div>
+
+            <div className="border border-slate-200 dark:border-zinc-800 rounded-xl p-4 opacity-50 flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center shrink-0">
+                <Zap size={16} className="text-white" />
+              </div>
+              <div className="flex-1">
+                <p className="font-bold text-sm text-slate-900 dark:text-white">Stripe</p>
+                <p className="text-xs text-slate-500 dark:text-zinc-500">Global cards · Apple Pay · Google Pay</p>
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-zinc-600 bg-slate-100 dark:bg-zinc-800 px-2 py-1 rounded-full">Soon</span>
+            </div>
+          </div>
+
+          <div className="mt-5 flex items-center justify-center gap-2 text-xs text-slate-400 dark:text-zinc-600">
+            <ShieldCheck size={14} />
+            <span>Secure checkout · 256-bit encryption</span>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
 const GlowingBox = ({ children, themeDef, className = '' }) => (
   <div className="relative group h-full">
     <div
@@ -72,6 +176,20 @@ const GlowingBox = ({ children, themeDef, className = '' }) => (
   </div>
 );
 
+const WhatsAppButton = () => (
+  <a
+    href="https://wa.me/919442348726"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Chat with us on WhatsApp"
+    className="fixed bottom-20 right-6 z-50 w-12 h-12 bg-[#25D366] hover:bg-[#20bb5a] rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 cursor-pointer"
+  >
+    <svg viewBox="0 0 24 24" fill="white" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+);
+
 const ThemeSwitcher = ({ currentTheme, setTheme }) => (
   <div className="fixed bottom-6 right-6 z-50 flex gap-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md p-2 rounded-full border border-slate-200 dark:border-zinc-800 shadow-2xl">
     {Object.entries(themes).map(([key, theme]) => (
@@ -79,7 +197,7 @@ const ThemeSwitcher = ({ currentTheme, setTheme }) => (
         key={key}
         onClick={() => setTheme(key)}
         title={theme.name}
-        className={`w-8 h-8 rounded-full bg-gradient-to-r ${theme.gradient} ${currentTheme === key ? 'ring-2 ring-slate-900 dark:ring-white ring-offset-2 ring-offset-slate-50 dark:ring-offset-zinc-950' : 'opacity-40 hover:opacity-100'} transition-all`}
+        className={`w-8 h-8 rounded-full bg-gradient-to-r ${theme.gradient} cursor-pointer ${currentTheme === key ? 'ring-2 ring-slate-900 dark:ring-white ring-offset-2 ring-offset-slate-50 dark:ring-offset-zinc-950' : 'opacity-40 hover:opacity-100'} transition-all`}
       />
     ))}
   </div>
@@ -147,7 +265,7 @@ const Navbar = ({ isDark, toggleDark }) => (
       <div className="flex items-center gap-4">
         <button
           onClick={toggleDark}
-          className="p-2 text-slate-500 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white transition-colors"
+          className="p-2 text-slate-500 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white transition-colors cursor-pointer"
           aria-label="Toggle Dark Mode"
         >
           {isDark ? <Sun size={18} /> : <Moon size={18} />}
@@ -891,7 +1009,10 @@ const Ecosystem = ({ themeDef }) => (
   </section>
 );
 
-const Pricing = ({ themeDef }) => (
+const Pricing = ({ themeDef }) => {
+  const [showPayment, setShowPayment] = useState(false);
+
+  return (
   <section
     id="pricing"
     className="py-24 px-6 border-t border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-950 relative overflow-hidden transition-colors duration-300"
@@ -985,11 +1106,11 @@ const Pricing = ({ themeDef }) => (
                 className={`text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${themeDef.gradient}`}
               >
                 {' '}
-                $119{' '}
+                ₹10,999{' '}
               </span>
               <span className="text-lg text-slate-400 dark:text-zinc-500 line-through mb-1">
                 {' '}
-                $299{' '}
+                ₹24,999{' '}
               </span>
             </div>
             <p className="text-xs text-slate-500 dark:text-zinc-500 font-bold uppercase tracking-wider">
@@ -1041,15 +1162,19 @@ const Pricing = ({ themeDef }) => (
           </div>
 
           <button
-            className={`w-full bg-gradient-to-r ${themeDef.gradient} text-white py-3 rounded-md font-bold hover:opacity-90 transition-opacity shadow-lg`}
+            onClick={() => setShowPayment(true)}
+            className={`w-full bg-gradient-to-r ${themeDef.gradient} text-white py-3 rounded-md font-bold hover:opacity-90 transition-opacity shadow-lg cursor-pointer`}
           >
             Pre - order the Full Ecosystem
           </button>
         </GlowingBox>
       </div>
     </div>
+
+    <PaymentModal isOpen={showPayment} onClose={() => setShowPayment(false)} themeDef={themeDef} />
   </section>
 );
+};
 
 const FAQ = () => {
   const faqs = [
@@ -1114,7 +1239,7 @@ const FAQ = () => {
               className="border border-slate-200 dark:border-zinc-800 rounded-lg bg-white/50 dark:bg-zinc-900/50 overflow-hidden shadow-sm"
             >
               <button
-                className="w-full flex items-center justify-between p-6 text-left focus:outline-none hover:bg-slate-50 dark:hover:bg-zinc-900 transition-colors"
+                className="w-full flex items-center justify-between p-6 text-left focus:outline-none hover:bg-slate-50 dark:hover:bg-zinc-900 transition-colors cursor-pointer"
                 onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
               >
                 <span className="font-bold text-slate-900 dark:text-white"> {faq.q} </span>
@@ -1250,6 +1375,7 @@ export default function App() {
           </FadeIn>
         </main>
         <Footer />
+        <WhatsAppButton />
       </div>
     </div>
   );
