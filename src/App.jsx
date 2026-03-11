@@ -13,7 +13,6 @@ import ChevronDown from 'lucide-react/dist/esm/icons/chevron-down';
 import ChevronUp from 'lucide-react/dist/esm/icons/chevron-up';
 import Sun from 'lucide-react/dist/esm/icons/sun';
 import Moon from 'lucide-react/dist/esm/icons/moon';
-import Boxes from 'lucide-react/dist/esm/icons/boxes';
 import Code2 from 'lucide-react/dist/esm/icons/code-2';
 import Wind from 'lucide-react/dist/esm/icons/wind';
 import Terminal from 'lucide-react/dist/esm/icons/terminal';
@@ -185,7 +184,7 @@ const WhatsAppButton = () => (
     className="fixed bottom-20 right-6 z-50 w-12 h-12 bg-[#25D366] hover:bg-[#20bb5a] rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 cursor-pointer"
   >
     <svg viewBox="0 0 24 24" fill="white" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
   </a>
 );
@@ -203,6 +202,127 @@ const ThemeSwitcher = ({ currentTheme, setTheme }) => (
   </div>
 );
 
+const StackMark = ({ kind = 't', className = '', accentClass = 'stroke-fuchsia-500 dark:stroke-fuchsia-400' }) => (
+  <svg
+    viewBox="0 0 32 32"
+    aria-hidden="true"
+    className={className}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="4"
+      y="4"
+      width="24"
+      height="24"
+      rx="7"
+      className="fill-slate-900/8 dark:fill-white/8 transition-all duration-300 group-hover:fill-slate-900/12 dark:group-hover:fill-white/12"
+    />
+    {kind === 't' && (
+      <>
+        <path
+          d="M9 10H23"
+          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M16 10V24"
+          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+        />
+      </>
+    )}
+    {kind === 'n' && (
+      <>
+        <path
+          d="M10 23V10"
+          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M10 10L22 23"
+          className="stroke-slate-900 dark:stroke-white"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M22 23V10"
+          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+        />
+      </>
+    )}
+    {kind === 'r' && (
+      <>
+        <path
+          d="M10 24V10"
+          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M10 10H16.5C19.5 10 21.8 12.2 21.8 15C21.8 17.8 19.5 20 16.5 20H10"
+          className="stroke-slate-900 dark:stroke-white"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M16 19.5L22 24"
+          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+        />
+      </>
+    )}
+    {kind === 'p' && (
+      <>
+        <path
+          d="M10 24V10"
+          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M10 10H17C20 10 22 12.2 22 15C22 17.8 20 20 17 20H10"
+          className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </>
+    )}
+    <path
+      d="M21.5 8.5C19.5 8.5 18 9.8 18 11.4C18 13.1 19.5 14 21.2 14.5C22.8 15 24 15.7 24 17.2C24 18.9 22.5 20 20.2 20"
+      className={`${accentClass} transition-all duration-300 group-hover:translate-x-[0.5px]`}
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const BrandMark = ({ className = '' }) => <StackMark kind="t" className={className} />;
+
+const BrandLogo = ({ compact = false }) => (
+  <span className="group inline-flex items-center gap-2.5 select-none">
+    <BrandMark className="h-7 w-7 shrink-0 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:rotate-3 group-active:scale-95" />
+    <span className="flex items-baseline gap-1 font-bold tracking-tight leading-none">
+      <span className={`${compact ? 'text-xl' : 'text-xl'} transition-transform duration-300 group-hover:translate-x-0.5`}>
+        tstack
+      </span>
+      <span className="text-[11px] font-semibold lowercase tracking-[0.14em] text-slate-500 dark:text-zinc-400 transition-colors duration-300 group-hover:text-slate-700 dark:group-hover:text-zinc-300">
+        kit
+      </span>
+    </span>
+  </span>
+);
+
 // --- Components ---
 
 const Navbar = ({ isDark, toggleDark }) => (
@@ -212,11 +332,9 @@ const Navbar = ({ isDark, toggleDark }) => (
         href="#"
         className="flex items-center gap-2 text-slate-900 dark:text-white transition-colors cursor-pointer group hover:opacity-80"
       >
-        <Boxes
-          size={26}
-          className="text-slate-900 dark:text-white stroke-[1.5] group-hover:scale-110 transition-transform duration-300"
-        />
-        <span className="font-bold text-xl tracking-tight"> tstack </span>
+        <span className="group-hover:scale-[1.02] transition-transform duration-300">
+          <BrandLogo compact />
+        </span>
       </a>
       <div className="hidden md:flex gap-8 text-sm text-slate-500 dark:text-zinc-400 font-medium">
         <a
@@ -299,17 +417,16 @@ const Hero = ({ themeDef }) => (
           className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border ${themeDef.border} ${themeDef.bg} ${themeDef.text} text-xs font-semibold uppercase tracking-wider mb-8 transition-colors duration-500`}
         >
           <Zap size={14} className={themeDef.text} />
-          <span>The Ultimate Deno + Hono Starter </span>
+          <span>Deno + Hono, Production-Ready </span>
         </div>
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1] mb-6">
-          Zero Boilerplate.
+          Opinionated by Experts.
           <br />
-          <span className="text-slate-400 dark:text-zinc-500"> Maximum Velocity.</span>
+          <span className="text-slate-400 dark:text-zinc-500"> Fast Where It Matters.</span>
         </h1>
         <p className="text-lg md:text-xl text-slate-600 dark:text-zinc-400 mb-10 max-w-xl leading-relaxed">
-          An aggressively opinionated Deno monolith built for speed.Hono, Fresh, Drizzle, and
-          Postgres—surgically pre - wired and strictly typed.Stop wrestling with infrastructure and
-          start shipping revenue - generating code today.
+          Hono, Fresh, Drizzle, and Postgres, already wired together with strict types and
+          production-grade defaults. Less setup. More shipping.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <a
@@ -977,6 +1094,9 @@ const Ecosystem = ({ themeDef }) => (
             {' '}
             Available Now{' '}
           </div>
+          <div className="mb-3 flex justify-center">
+            <StackMark kind="t" className="h-12 w-12" />
+          </div>
           <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1"> tstack - kit </h3>
           <p className="text-slate-500 dark:text-zinc-400 text-sm"> Deno • TypeScript </p>
         </GlowingBox>
@@ -984,6 +1104,13 @@ const Ecosystem = ({ themeDef }) => (
           <div className="text-xs font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-widest mb-2">
             {' '}
             In Development{' '}
+          </div>
+          <div className="mb-3 flex justify-center">
+            <StackMark
+              kind="n"
+              className="h-12 w-12"
+              accentClass="stroke-sky-500 dark:stroke-sky-400 group-hover:stroke-sky-600 dark:group-hover:stroke-sky-300"
+            />
           </div>
           <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1"> nstack </h3>
           <p className="text-slate-500 dark:text-zinc-400 text-sm"> Node / Bun • Express </p>
@@ -993,6 +1120,13 @@ const Ecosystem = ({ themeDef }) => (
             {' '}
             In Development{' '}
           </div>
+          <div className="mb-3 flex justify-center">
+            <StackMark
+              kind="r"
+              className="h-12 w-12"
+              accentClass="stroke-rose-500 dark:stroke-rose-400 group-hover:stroke-rose-600 dark:group-hover:stroke-rose-300"
+            />
+          </div>
           <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1"> rstack </h3>
           <p className="text-slate-500 dark:text-zinc-400 text-sm"> Ruby on Rails </p>
         </div>
@@ -1000,6 +1134,13 @@ const Ecosystem = ({ themeDef }) => (
           <div className="text-xs font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-widest mb-2">
             {' '}
             In Development{' '}
+          </div>
+          <div className="mb-3 flex justify-center">
+            <StackMark
+              kind="p"
+              className="h-12 w-12"
+              accentClass="stroke-emerald-500 dark:stroke-emerald-400 group-hover:stroke-emerald-600 dark:group-hover:stroke-emerald-300"
+            />
           </div>
           <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1"> pstack </h3>
           <p className="text-slate-500 dark:text-zinc-400 text-sm"> Phoenix • Elixir </p>
@@ -1013,167 +1154,167 @@ const Pricing = ({ themeDef }) => {
   const [showPayment, setShowPayment] = useState(false);
 
   return (
-  <section
-    id="pricing"
-    className="py-24 px-6 border-t border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-950 relative overflow-hidden transition-colors duration-300"
-  >
-    <div
-      className={`absolute -right-64 top-0 w-96 h-96 bg-gradient-to-l ${themeDef.gradient} rounded-full blur-[150px] opacity-10 dark:opacity-20 pointer-events-none transition-all duration-1000`}
+    <section
+      id="pricing"
+      className="py-24 px-6 border-t border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-950 relative overflow-hidden transition-colors duration-300"
     >
-      {' '}
-    </div>
-    <div className="max-w-5xl mx-auto relative z-10">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-          {' '}
-          Choose Your Arsenal{' '}
-        </h2>
-        <p className="text-slate-600 dark:text-zinc-400 max-w-xl mx-auto">
-          {' '}
-          Start for free with our open - source Deno kit, or lock in early adopter pricing for the
-          entire upcoming premium ecosystem.
-        </p>
+      <div
+        className={`absolute -right-64 top-0 w-96 h-96 bg-gradient-to-l ${themeDef.gradient} rounded-full blur-[150px] opacity-10 dark:opacity-20 pointer-events-none transition-all duration-1000`}
+      >
+        {' '}
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Free Tier */}
-        <div className="p-8 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 flex flex-col h-full shadow-sm">
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
             {' '}
-            tstack - kit Open Source{' '}
-          </h3>
-          <p className="text-slate-500 dark:text-zinc-400 text-sm mb-6">
+            Choose Your Arsenal{' '}
+          </h2>
+          <p className="text-slate-600 dark:text-zinc-400 max-w-xl mx-auto">
             {' '}
-            The modern, opinionated Deno stack for rapid iteration.
+            Start for free with our open - source Deno kit, or lock in early adopter pricing for the
+            entire upcoming premium ecosystem.
           </p>
-          <div className="text-4xl font-extrabold text-slate-900 dark:text-white mb-8">
-            {' '}
-            Free{' '}
-            <span className="text-lg font-medium text-slate-400 dark:text-zinc-500"> forever </span>
-          </div>
-
-          <ul className="space-y-4 mb-8 flex-grow">
-            {[
-              'Full CLI: create, scaffold, destroy, infra',
-              'Hono API + Fresh (Preact) frontends',
-              'Drizzle ORM + PostgreSQL + Zod validation',
-              '390+ tests (CLI, Admin, API)',
-              'JWT + OAuth (Google, Facebook)',
-              'Docker multi-env (dev / test / prod)',
-              'Kamal deployment + Status page',
-              'E-commerce: cart, orders, payments',
-              'Security hardened (9-block audit)',
-              'Community support via GitHub',
-            ].map((item, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm"
-              >
-                <Check size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
-                <span>{item} </span>
-              </li>
-            ))}
-          </ul>
-
-          <a
-            href="https://github.com/desingh-rajan/tstack-kit"
-            className="w-full flex items-center justify-center gap-2 bg-slate-100 dark:bg-zinc-800 text-slate-900 dark:text-white py-3 rounded-md font-bold hover:bg-slate-200 dark:hover:bg-zinc-700 transition-colors border border-slate-200 dark:border-zinc-700"
-          >
-            <Github size={18} />
-            Clone Repository
-          </a>
         </div>
 
-        {/* Premium Pre-order */}
-        <GlowingBox themeDef={themeDef} className="!p-8 relative">
-          <div
-            className={`absolute top-0 right-8 -translate-y-1/2 bg-gradient-to-r ${themeDef.gradient} text-white font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide shadow-lg`}
-          >
-            Early Bird
-          </div>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
-            {' '}
-            The Early Adopter Bundle{' '}
-          </h3>
-          <p className="text-slate-500 dark:text-zinc-400 text-sm mb-6">
-            {' '}
-            Unlocks lifetime access to the upcoming premium stacks.
-          </p>
-
-          <div className="mb-8">
-            <div className="flex items-end gap-3 mb-1">
-              <span
-                className={`text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${themeDef.gradient}`}
-              >
-                {' '}
-                ₹10,999{' '}
-              </span>
-              <span className="text-lg text-slate-400 dark:text-zinc-500 line-through mb-1">
-                {' '}
-                ₹24,999{' '}
-              </span>
-            </div>
-            <p className="text-xs text-slate-500 dark:text-zinc-500 font-bold uppercase tracking-wider">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Free Tier */}
+          <div className="p-8 rounded-2xl border border-slate-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 flex flex-col h-full shadow-sm">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
               {' '}
-              Early bird pricing until June 19. One - time purchase.
+              tstack - kit Open Source{' '}
+            </h3>
+            <p className="text-slate-500 dark:text-zinc-400 text-sm mb-6">
+              {' '}
+              The modern, opinionated Deno stack for rapid iteration.
             </p>
+            <div className="text-4xl font-extrabold text-slate-900 dark:text-white mb-8">
+              {' '}
+              Free{' '}
+              <span className="text-lg font-medium text-slate-400 dark:text-zinc-500"> forever </span>
+            </div>
+
+            <ul className="space-y-4 mb-8 flex-grow">
+              {[
+                'Full CLI: create, scaffold, destroy, infra',
+                'Hono API + Fresh (Preact) frontends',
+                'Drizzle ORM + PostgreSQL + Zod validation',
+                '390+ tests (CLI, Admin, API)',
+                'JWT + OAuth (Google, Facebook)',
+                'Docker multi-env (dev / test / prod)',
+                'Kamal deployment + Status page',
+                'E-commerce: cart, orders, payments',
+                'Security hardened (9-block audit)',
+                'Community support via GitHub',
+              ].map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm"
+                >
+                  <Check size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
+                  <span>{item} </span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="https://github.com/desingh-rajan/tstack-kit"
+              className="w-full flex items-center justify-center gap-2 bg-slate-100 dark:bg-zinc-800 text-slate-900 dark:text-white py-3 rounded-md font-bold hover:bg-slate-200 dark:hover:bg-zinc-700 transition-colors border border-slate-200 dark:border-zinc-700"
+            >
+              <Github size={18} />
+              Clone Repository
+            </a>
           </div>
 
-          <ul className="space-y-4 mb-8 flex-grow">
-            <li className={`flex items-start gap-3 ${themeDef.text} text-sm font-bold`}>
-              <Check size={18} className="shrink-0" strokeWidth={3} />
-              <span>Lifetime access to nstack, rstack & pstack </span>
-            </li>
-            {[
-              'Private repository access on release',
-              'Flutter mobile UI kit (upcoming)',
-              'Priority email support',
-              'Advanced SaaS templates & layouts',
-              'Vote on upcoming feature roadmaps',
-            ].map((item, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm"
-              >
-                <Check size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
-                <span>{item} </span>
+          {/* Premium Pre-order */}
+          <GlowingBox themeDef={themeDef} className="!p-8 relative">
+            <div
+              className={`absolute top-0 right-8 -translate-y-1/2 bg-gradient-to-r ${themeDef.gradient} text-white font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide shadow-lg`}
+            >
+              Early Bird
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+              {' '}
+              The Early Adopter Bundle{' '}
+            </h3>
+            <p className="text-slate-500 dark:text-zinc-400 text-sm mb-6">
+              {' '}
+              Unlocks lifetime access to the upcoming premium stacks.
+            </p>
+
+            <div className="mb-8">
+              <div className="flex items-end gap-3 mb-1">
+                <span
+                  className={`text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${themeDef.gradient}`}
+                >
+                  {' '}
+                  ₹10,999{' '}
+                </span>
+                <span className="text-lg text-slate-400 dark:text-zinc-500 line-through mb-1">
+                  {' '}
+                  ₹24,999{' '}
+                </span>
+              </div>
+              <p className="text-xs text-slate-500 dark:text-zinc-500 font-bold uppercase tracking-wider">
+                {' '}
+                Early bird pricing until June 19. One - time purchase.
+              </p>
+            </div>
+
+            <ul className="space-y-4 mb-8 flex-grow">
+              <li className={`flex items-start gap-3 ${themeDef.text} text-sm font-bold`}>
+                <Check size={18} className="shrink-0" strokeWidth={3} />
+                <span>Lifetime access to nstack, rstack & pstack </span>
               </li>
-            ))}
-            <li className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm pt-2 border-t border-slate-200 dark:border-zinc-800">
-              <MessageSquare size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
-              <span>Private Discord community (20+ lead architects & principals) </span>
-            </li>
-            <li className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm">
-              <BrainCircuit size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
-              <span>On-demand architecture guidance via Discord chat </span>
-            </li>
-            <li className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm">
-              <Gamepad2 size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
-              <span>Game nights — AOE2 DE & DOTA with the community </span>
-            </li>
-          </ul>
+              {[
+                'Private repository access on release',
+                'Flutter mobile UI kit (upcoming)',
+                'Priority email support',
+                'Advanced SaaS templates & layouts',
+                'Vote on upcoming feature roadmaps',
+              ].map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm"
+                >
+                  <Check size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
+                  <span>{item} </span>
+                </li>
+              ))}
+              <li className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm pt-2 border-t border-slate-200 dark:border-zinc-800">
+                <MessageSquare size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
+                <span>Private Discord community (20+ lead architects & principals) </span>
+              </li>
+              <li className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm">
+                <BrainCircuit size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
+                <span>On-demand architecture guidance via Discord chat </span>
+              </li>
+              <li className="flex items-start gap-3 text-slate-700 dark:text-zinc-300 text-sm">
+                <Gamepad2 size={18} className="text-slate-400 dark:text-zinc-500 shrink-0" />
+                <span>Game nights — AOE2 DE & DOTA with the community </span>
+              </li>
+            </ul>
 
-          <div className="p-4 bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-md mb-6">
-            <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
-              <strong className="text-slate-900 dark:text-white"> Transparent Pre - order: </strong>{' '}
-              Development is underway. Secure a massive discount today and get access the moment the
-              MVP drops.
-            </p>
-          </div>
+            <div className="p-4 bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-md mb-6">
+              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+                <strong className="text-slate-900 dark:text-white"> Transparent Pre - order: </strong>{' '}
+                Development is underway. Secure a massive discount today and get access the moment the
+                MVP drops.
+              </p>
+            </div>
 
-          <button
-            onClick={() => setShowPayment(true)}
-            className={`w-full bg-gradient-to-r ${themeDef.gradient} text-white py-3 rounded-md font-bold hover:opacity-90 transition-opacity shadow-lg cursor-pointer`}
-          >
-            Pre - order the Full Ecosystem
-          </button>
-        </GlowingBox>
+            <button
+              onClick={() => setShowPayment(true)}
+              className={`w-full bg-gradient-to-r ${themeDef.gradient} text-white py-3 rounded-md font-bold hover:opacity-90 transition-opacity shadow-lg cursor-pointer`}
+            >
+              Pre - order the Full Ecosystem
+            </button>
+          </GlowingBox>
+        </div>
       </div>
-    </div>
 
-    <PaymentModal isOpen={showPayment} onClose={() => setShowPayment(false)} themeDef={themeDef} />
-  </section>
-);
+      <PaymentModal isOpen={showPayment} onClose={() => setShowPayment(false)} themeDef={themeDef} />
+    </section>
+  );
 };
 
 const FAQ = () => {
@@ -1268,11 +1409,9 @@ const Footer = () => (
       href="#"
       className="flex items-center justify-center gap-2 text-slate-900 dark:text-white transition-colors cursor-pointer group hover:opacity-80 mb-4"
     >
-      <Boxes
-        size={24}
-        className="stroke-[1.5] group-hover:scale-110 transition-transform duration-300"
-      />
-      <span className="font-bold text-xl tracking-tight"> tstack </span>
+      <span className="group-hover:scale-[1.02] transition-transform duration-300">
+        <BrandLogo compact />
+      </span>
     </a>
     <p className="text-slate-500 dark:text-zinc-500 text-sm">
       {' '}
