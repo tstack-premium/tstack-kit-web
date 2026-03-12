@@ -527,29 +527,29 @@ const TrustedBy = () => (
       <p className="text-sm font-bold text-slate-500 dark:text-zinc-500 uppercase tracking-[0.2em] mb-10">
         Allies shipping to production with tstack
       </p>
-      <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+      <div className="flex flex-wrap justify-center items-stretch gap-5 md:gap-6">
         {/* Surya's Cookware */}
         <a
           href="https://www.suryascookware.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 transition-transform hover:scale-105 group"
+          className="group flex min-w-[250px] items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/90 px-5 py-4 shadow-sm shadow-slate-200/60 transition-all duration-300 hover:-translate-y-1 hover:border-[#d7b24a]/50 hover:shadow-[0_14px_35px_rgba(215,178,74,0.18)] dark:border-zinc-800 dark:bg-zinc-950/90 dark:shadow-none"
         >
-          <div className="relative w-12 h-12 flex items-center justify-center rounded-full border-2 border-slate-300 dark:border-zinc-700 group-hover:border-[#d4af37] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
-            <span className="text-3xl font-serif font-bold text-slate-400 dark:text-zinc-600 group-hover:text-[#d4af37] italic mt-0.5 pr-0.5 transition-colors duration-300">
-              {' '}
-              S{' '}
-            </span>
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white ring-1 ring-slate-200/80 transition-all duration-300 group-hover:ring-[#d7b24a]/60 dark:ring-white/10">
+            <img
+              src="/client-logos/suryas-cookware-logo.png"
+              alt="Surya's Cookware"
+              loading="lazy"
+              className="h-12 w-12 object-contain"
+            />
           </div>
-          <div className="flex flex-col items-start">
-            <span className="text-2xl font-bold text-slate-400 dark:text-zinc-500 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#ff7e00] group-hover:to-[#800080] bg-clip-text leading-none mb-1 font-sans transition-all duration-300">
-              {' '}
-              SURYA'S
-            </span>
-            <span className="text-xs tracking-[0.25em] text-slate-400 dark:text-zinc-600 group-hover:text-[#1e3a8a] dark:group-hover:text-[#3b82f6] font-sans leading-none font-semibold transition-colors duration-300">
-              {' '}
-              COOKWARE{' '}
-            </span>
+          <div className="text-left">
+            <div className="font-surya text-[29px] font-semibold uppercase leading-none tracking-[0.04em] text-[#f97316] transition-colors duration-300 group-hover:text-[#ea580c]">
+              Surya&apos;s
+            </div>
+            <div className="font-surya mt-1 text-[13px] font-semibold uppercase leading-none tracking-[0.28em] text-[#6d4ea2] transition-colors duration-300 group-hover:text-[#5b3d95]">
+              Cookware
+            </div>
           </div>
         </a>
 
@@ -558,22 +558,24 @@ const TrustedBy = () => (
           href="https://neverbeforemarketing.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 transition-transform hover:scale-105 group"
+          className="group flex min-w-[260px] items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/90 px-5 py-4 shadow-sm shadow-slate-200/60 transition-all duration-300 hover:-translate-y-1 hover:border-[#12b8b0]/45 hover:shadow-[0_14px_35px_rgba(18,184,176,0.14)] dark:border-zinc-800 dark:bg-zinc-950/90 dark:shadow-none"
         >
-          <div className="relative flex items-center justify-center w-12 h-12 bg-slate-100 dark:bg-zinc-800 group-hover:bg-[#168a83]/10 rounded-xl transition-colors duration-300">
-            <Wind
-              size={28}
-              className="text-slate-400 dark:text-zinc-500 group-hover:text-[#168a83] transition-colors duration-300"
-              strokeWidth={2.5}
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white ring-1 ring-slate-200/80 transition-all duration-300 group-hover:ring-[#12b8b0]/50 dark:ring-white/10">
+            <img
+              src="/client-logos/nbm-logo.png"
+              alt="Never Before Marketing"
+              loading="lazy"
+              className="h-12 w-12 object-contain"
             />
           </div>
-          <span className="text-2xl font-bold text-slate-400 dark:text-zinc-500 font-sans transition-colors duration-300">
-            Never Before{' '}
-            <span className="text-slate-500 dark:text-zinc-600 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-300">
-              {' '}
-              Marketing{' '}
-            </span>
-          </span>
+          <div className="text-left">
+            <div className="text-xl font-bold leading-tight text-[#0f766e] transition-colors duration-300 group-hover:text-[#0d9488] dark:text-[#4adeca] dark:group-hover:text-[#5eead4]">
+              Never Before Marketing
+            </div>
+            <div className="mt-1 text-[11px] font-medium uppercase tracking-[0.26em] text-slate-500 transition-colors duration-300 group-hover:text-slate-700 dark:text-zinc-500 dark:group-hover:text-zinc-300">
+              Motion design studio
+            </div>
+          </div>
         </a>
 
         {/* Vega Tools & Hardwares */}
@@ -581,23 +583,24 @@ const TrustedBy = () => (
           href="https://vegatoolsandhardwares.in/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 transition-transform hover:scale-105 group"
+          className="group flex min-w-[270px] items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/90 px-5 py-4 shadow-sm shadow-slate-200/60 transition-all duration-300 hover:-translate-y-1 hover:border-[#22c55e]/40 hover:shadow-[0_14px_35px_rgba(34,197,94,0.14)] dark:border-zinc-800 dark:bg-zinc-950/90 dark:shadow-none"
         >
-          <div className="flex flex-col items-center justify-center">
-            <Layers
-              size={32}
-              className="text-slate-400 dark:text-zinc-500 group-hover:text-[#519f35] mb-0.5 transition-colors duration-300"
-              strokeWidth={2.5}
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white ring-1 ring-slate-200/80 transition-all duration-300 group-hover:ring-[#22c55e]/50 dark:ring-white/10">
+            <img
+              src="/client-logos/vega-logo.png"
+              alt="Vega Tools & Hardwares"
+              loading="lazy"
+              className="h-12 w-12 object-contain"
             />
-            <span className="text-[10px] font-black text-slate-400 dark:text-zinc-600 tracking-widest font-sans transition-colors duration-300">
-              {' '}
-              VEGA{' '}
-            </span>
           </div>
-          <span className="text-2xl font-black text-slate-400 dark:text-zinc-500 group-hover:text-[#519f35] tracking-wide uppercase font-sans transition-colors duration-300">
-            {' '}
-            Tools & Hardwares{' '}
-          </span>
+          <div className="text-left">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.34em] text-slate-500 transition-colors duration-300 group-hover:text-slate-700 dark:text-zinc-500 dark:group-hover:text-zinc-300">
+              Vega
+            </div>
+            <div className="mt-1 text-[22px] font-black uppercase leading-none tracking-[0.06em] text-[#16a34a] transition-colors duration-300 group-hover:text-[#22c55e]">
+              Tools & Hardwares
+            </div>
+          </div>
         </a>
       </div>
     </div>
