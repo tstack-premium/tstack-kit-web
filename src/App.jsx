@@ -204,13 +204,7 @@ const ThemeSwitcher = ({ currentTheme, setTheme }) => (
 
 const StackMark = ({ kind = 't', className = '', accentClass = 'stroke-fuchsia-500 dark:stroke-fuchsia-400' }) => {
   const accentPath =
-    kind === 't'
-      ? 'M22.8 8.8C21.6 8.8 20.8 9.6 20.8 10.8C20.8 12 21.8 12.6 22.9 13C24 13.4 24.9 14.1 24.9 15.3C24.9 16.7 23.8 17.6 22.1 17.6'
-      : kind === 'n'
-        ? 'M22.8 10.1C21.6 10.1 20.8 10.9 20.8 12C20.8 13.2 21.8 13.8 22.9 14.2C24 14.6 24.9 15.2 24.9 16.4C24.9 17.8 23.8 18.7 22.1 18.7'
-        : kind === 'r'
-          ? 'M22.4 10.2C21.2 10.2 20.4 11 20.4 12.1C20.4 13.3 21.4 13.9 22.5 14.3C23.7 14.7 24.6 15.3 24.6 16.5C24.6 17.9 23.5 18.9 21.8 18.9'
-          : 'M22.5 10.1C21.3 10.1 20.5 10.9 20.5 12C20.5 13.2 21.5 13.8 22.6 14.2C23.8 14.6 24.7 15.2 24.7 16.5C24.7 17.9 23.6 18.8 21.9 18.8';
+    'M24.6 9.2C23.4 9.2 22.6 10 22.6 11.2C22.6 12.4 23.6 13 24.7 13.4C25.9 13.8 26.8 14.6 26.8 15.9C26.8 17.4 25.6 18.4 23.8 18.4';
 
   return (
     <svg
@@ -231,13 +225,13 @@ const StackMark = ({ kind = 't', className = '', accentClass = 'stroke-fuchsia-5
       {kind === 't' && (
         <>
           <path
-            d="M9 10H23"
+            d="M8.5 10H20.5"
             className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
             strokeWidth="2.8"
             strokeLinecap="round"
           />
           <path
-            d="M16 10V24"
+            d="M14.5 10V24"
             className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
             strokeWidth="2.8"
             strokeLinecap="round"
@@ -247,20 +241,20 @@ const StackMark = ({ kind = 't', className = '', accentClass = 'stroke-fuchsia-5
       {kind === 'n' && (
         <>
           <path
-            d="M10 23V10"
+            d="M9.5 23V10"
             className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
             strokeWidth="2.8"
             strokeLinecap="round"
           />
           <path
-            d="M10 10L21 23"
+            d="M9.5 10L19.5 23"
             className="stroke-slate-900 dark:stroke-white"
             strokeWidth="2.8"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
           <path
-            d="M21 23V10"
+            d="M19.5 23V10"
             className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
             strokeWidth="2.8"
             strokeLinecap="round"
@@ -270,20 +264,20 @@ const StackMark = ({ kind = 't', className = '', accentClass = 'stroke-fuchsia-5
       {kind === 'r' && (
         <>
           <path
-            d="M10 24V10"
+            d="M9.5 24V10"
             className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
             strokeWidth="2.8"
             strokeLinecap="round"
           />
           <path
-            d="M10 10H16.5C19.5 10 21.8 12.2 21.8 15C21.8 17.8 19.5 20 16.5 20H10"
+            d="M9.5 10H15.5C18.3 10 20.3 12.2 20.3 15C20.3 17.8 18.3 19.8 15.5 19.8H9.5"
             className="stroke-slate-900 dark:stroke-white"
             strokeWidth="2.8"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
           <path
-            d="M16 19.5L22 24"
+            d="M15.2 19.3L20.2 24"
             className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
             strokeWidth="2.8"
             strokeLinecap="round"
@@ -293,13 +287,13 @@ const StackMark = ({ kind = 't', className = '', accentClass = 'stroke-fuchsia-5
       {kind === 'p' && (
         <>
           <path
-            d="M10 24V10"
+            d="M9.5 24V10"
             className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:-translate-y-[0.5px]"
             strokeWidth="2.8"
             strokeLinecap="round"
           />
           <path
-            d="M10 10H17C20 10 22 12.2 22 15C22 17.8 20 20 17 20H10"
+            d="M9.5 10H16C18.8 10 20.8 12.2 20.8 15C20.8 17.8 18.8 19.8 16 19.8H9.5"
             className="stroke-slate-900 dark:stroke-white transition-transform duration-300 group-hover:translate-y-[0.5px]"
             strokeWidth="2.8"
             strokeLinecap="round"
@@ -310,7 +304,7 @@ const StackMark = ({ kind = 't', className = '', accentClass = 'stroke-fuchsia-5
       <path
         d={accentPath}
         className={`${accentClass} transition-all duration-300 group-hover:translate-x-[0.5px]`}
-        strokeWidth="2.2"
+        strokeWidth="2.35"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

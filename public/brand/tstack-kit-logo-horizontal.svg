@@ -1,18 +1,9 @@
 <svg width="1600" height="420" viewBox="0 0 1600 420" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g transform="translate(40 34)">
-    <path d="M98 86H322" stroke="#0F172A" stroke-width="46" stroke-linecap="round"/>
-    <path d="M210 86V310" stroke="#0F172A" stroke-width="46" stroke-linecap="round"/>
-    <path d="M328 84C304 84 288 100 288 124C288 148 308 160 330 168C352 176 370 190 370 214C370 242 348 258 314 258" stroke="#D946EF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M90 86H282" stroke="#0F172A" stroke-width="46" stroke-linecap="round"/>
+    <path d="M186 86V310" stroke="#0F172A" stroke-width="46" stroke-linecap="round"/>
+    <path d="M348 73C329 73 316 86 316 105C316 124 331 134 349 141C368 147 383 160 383 181C383 205 364 221 335 221" stroke="#D946EF" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
-  <g fill="#0F172A">
-    <path d="M470 125H694V176H610V345H553V176H470V125Z"/>
-    <path d="M737 232C737 166 783 118 853 118C889 118 919 130 942 154L906 192C892 178 875 171 855 171C819 171 795 196 795 232C795 268 819 293 855 293C875 293 892 286 906 272L942 310C919 334 889 346 853 346C783 346 737 298 737 232Z"/>
-    <path d="M985 232C985 166 1034 118 1105 118C1176 118 1225 166 1225 232C1225 298 1176 346 1105 346C1034 346 985 298 985 232ZM1167 232C1167 196 1143 171 1105 171C1067 171 1043 196 1043 232C1043 268 1067 293 1105 293C1143 293 1167 268 1167 232Z"/>
-    <path d="M1267 125H1325V345H1267V125Z"/>
-  </g>
-  <g fill="#64748B">
-    <path d="M1366 212H1417V345H1366V212Z"/>
-    <path d="M1450 125H1501V345H1450V125Z"/>
-    <path d="M1534 158H1585V345H1534V158Z"/>
-  </g>
+  <text x="470" y="248" fill="#0F172A" font-family="'IBM Plex Mono', 'JetBrains Mono', monospace" font-size="156" font-weight="700" letter-spacing="-8">tstack</text>
+  <text x="1228" y="244" fill="#64748B" font-family="'IBM Plex Mono', 'JetBrains Mono', monospace" font-size="82" font-weight="600" letter-spacing="8">kit</text>
 </svg>
